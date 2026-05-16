@@ -1,0 +1,77 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Vùng tổng hợp 1",
+        "suitability": "Rất phù hợp",
+        "color": "#1a9850",
+        "note": "Tổng hợp điều kiện khí hậu và đất."
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              107.0,
+              21.1
+            ],
+            [
+              107.45,
+              21.1
+            ],
+            [
+              107.45,
+              21.55
+            ],
+            [
+              107.0,
+              21.55
+            ],
+            [
+              107.0,
+              21.1
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Vùng tổng hợp 2",
+        "suitability": "Ít phù hợp",
+        "color": "#fee08b",
+        "note": "Cần kiểm tra hạn chế về khí hậu/đất."
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              106.75,
+              20.8
+            ],
+            [
+              107.05,
+              20.8
+            ],
+            [
+              107.05,
+              21.05
+            ],
+            [
+              106.75,
+              21.05
+            ],
+            [
+              106.75,
+              20.8
+            ]
+          ]
+        ]
+      }
+    }
+  ]
+}

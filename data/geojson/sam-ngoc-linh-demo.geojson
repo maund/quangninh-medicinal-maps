@@ -1,0 +1,41 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Khu vực núi cao Bình Liêu",
+        "suitability": "Thử nghiệm / tiềm năng",
+        "color": "#fee08b",
+        "note": "Cần thay bằng kết quả đánh giá chính thức."
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              107.35,
+              21.55
+            ],
+            [
+              107.55,
+              21.55
+            ],
+            [
+              107.55,
+              21.72
+            ],
+            [
+              107.35,
+              21.72
+            ],
+            [
+              107.35,
+              21.55
+            ]
+          ]
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,77 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Khu vực Bình Liêu",
+        "suitability": "Rất phù hợp",
+        "color": "#1a9850",
+        "note": "Dữ liệu minh họa."
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              107.25,
+              21.45
+            ],
+            [
+              107.65,
+              21.45
+            ],
+            [
+              107.65,
+              21.75
+            ],
+            [
+              107.25,
+              21.75
+            ],
+            [
+              107.25,
+              21.45
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Khu vực Đầm Hà - Hải Hà",
+        "suitability": "Phù hợp",
+        "color": "#91cf60",
+        "note": "Dữ liệu minh họa."
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              107.35,
+              21.25
+            ],
+            [
+              107.75,
+              21.25
+            ],
+            [
+              107.75,
+              21.45
+            ],
+            [
+              107.35,
+              21.45
+            ],
+            [
+              107.35,
+              21.25
+            ]
+          ]
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bản đồ cây dược liệu và cây trồng chủ lực tỉnh Quảng Ninh</title>
+
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div>
+        <h1>Bản đồ cây dược liệu và cây trồng chủ lực tỉnh Quảng Ninh</h1>
+        <p class="subtitle">Trang thông tin bản đồ phục vụ đề tài nghiên cứu phân vùng phát triển cây dược liệu và cây trồng chủ lực.</p>
+      </div>
+      <nav>
+        <a href="#home">Giới thiệu</a>
+        <a href="#maps">Bản đồ</a>
+        <a href="#download">Tải dữ liệu</a>
+        <a href="#contact">Thông tin</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section id="home" class="hero container">
+      <div class="hero-text">
+        <h2>Hệ thống bản đồ trực tuyến</h2>
+        <p>
+          Website này được xây dựng nhằm công bố, tra cứu và chia sẻ các lớp bản đồ liên quan đến điều kiện khí hậu,
+          đất đai, mức độ phù hợp và định hướng phát triển một số cây dược liệu, cây trồng chủ lực trên địa bàn tỉnh Quảng Ninh.
+        </p>
+        <p>
+          Thầy có thể thay nội dung mô tả, hình ảnh bản đồ và dữ liệu GeoJSON trong thư mục <strong>data</strong>.
+        </p>
+      </div>
+      <div class="hero-card">
+        <h3>Các nhóm bản đồ chính</h3>
+        <ul>
+          <li>Bản đồ phân vùng cây Ba kích</li>
+          <li>Bản đồ phân vùng cây Trà hoa vàng</li>
+          <li>Bản đồ vùng thích hợp di thực cây Sâm Ngọc Linh</li>
+          <li>Bản đồ khí hậu, đất và mức độ phù hợp tổng hợp</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="maps" class="container section">
+      <div class="section-title">
+        <h2>Tra cứu bản đồ</h2>
+        <p>Chọn lớp bản đồ cần hiển thị. Dữ liệu minh họa có thể được thay bằng dữ liệu chính thức của đề tài.</p>
+      </div>
+
+      <div class="map-layout">
+        <aside class="layer-panel">
+          <h3>Danh mục bản đồ</h3>
+
+          <label class="layer-item">
+            <input type="radio" name="mapLayer" value="bakich" checked />
+            <span>Ba kích</span>
+          </label>
+
+          <label class="layer-item">
+            <input type="radio" name="mapLayer" value="trahoavang" />
+            <span>Trà hoa vàng</span>
+          </label>
+
+          <label class="layer-item">
+            <input type="radio" name="mapLayer" value="samngoclinh" />
+            <span>Sâm Ngọc Linh di thực</span>
+          </label>
+
+          <label class="layer-item">
+            <input type="radio" name="mapLayer" value="tonghop" />
+            <span>Tổng hợp khí hậu - đất</span>
+          </label>
+
+          <div class="legend">
+            <h4>Chú giải</h4>
+            <div><span class="legend-box high"></span> Rất phù hợp</div>
+            <div><span class="legend-box medium"></span> Phù hợp</div>
+            <div><span class="legend-box low"></span> Ít phù hợp</div>
+            <div><span class="legend-box none"></span> Không phù hợp / hạn chế</div>
+          </div>
+
+          <div class="note">
+            <strong>Gợi ý:</strong> Có thể đưa dữ liệu dạng GeoJSON vào thư mục <code>data/geojson</code>
+            và cập nhật đường dẫn trong file <code>assets/js/map.js</code>.
+          </div>
+        </aside>
+
+        <div id="map"></div>
+      </div>
+    </section>
+
+    <section class="container section cards-section">
+      <div class="section-title">
+        <h2>Thông tin theo từng cây</h2>
+      </div>
+
+      <div class="cards">
+        <article class="card">
+          <h3>Ba kích</h3>
+          <p>Cập nhật mô tả về yêu cầu sinh thái, điều kiện khí hậu - đất, mức độ phù hợp và khu vực khuyến nghị phát triển.</p>
+          <a href="pages/ba-kich.html">Xem chi tiết</a>
+        </article>
+
+        <article class="card">
+          <h3>Trà hoa vàng</h3>
+          <p>Cập nhật mô tả vùng phân bố, điều kiện lập địa, khí hậu và khả năng phát triển tại tỉnh Quảng Ninh.</p>
+          <a href="pages/tra-hoa-vang.html">Xem chi tiết</a>
+        </article>
+
+        <article class="card">
+          <h3>Sâm Ngọc Linh di thực</h3>
+          <p>Cập nhật kết quả đánh giá khả năng di thực, điều kiện khí hậu - đất và vùng thử nghiệm phù hợp.</p>
+          <a href="pages/sam-ngoc-linh.html">Xem chi tiết</a>
+        </article>
+      </div>
+    </section>
+
+    <section id="download" class="container section download-box">
+      <h2>Tải dữ liệu và tài liệu</h2>
+      <p>Thầy có thể đưa báo cáo PDF, bản đồ ảnh hoặc dữ liệu vào thư mục <strong>docs</strong> và cập nhật liên kết tại đây.</p>
+      <ul>
+        <li><a href="docs/README.txt">Hướng dẫn cập nhật dữ liệu</a></li>
+      </ul>
+    </section>
+
+    <section id="contact" class="container section contact-box">
+      <h2>Thông tin thực hiện</h2>
+      <p>
+        Cơ quan chủ trì/nhóm thực hiện: cập nhật theo thông tin chính thức của đề tài.
+      </p>
+      <p>
+        Trích dẫn đề xuất: “Bản đồ phân vùng cây dược liệu và cây trồng chủ lực tỉnh Quảng Ninh”.
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>© 2026. Trang bản đồ phục vụ nghiên cứu khoa học. Xây dựng bằng GitHub Pages và Leaflet.</p>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="assets/js/map.js"></script>
+</body>
+</html>

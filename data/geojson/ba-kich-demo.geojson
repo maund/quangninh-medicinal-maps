@@ -1,0 +1,77 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Khu vực Ba Chẽ - Tiên Yên",
+        "suitability": "Rất phù hợp",
+        "color": "#1a9850",
+        "note": "Dữ liệu minh họa, thay bằng kết quả chính thức."
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              107.05,
+              21.15
+            ],
+            [
+              107.35,
+              21.15
+            ],
+            [
+              107.35,
+              21.45
+            ],
+            [
+              107.05,
+              21.45
+            ],
+            [
+              107.05,
+              21.15
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Khu vực Hoành Bồ - Hạ Long",
+        "suitability": "Phù hợp",
+        "color": "#91cf60",
+        "note": "Dữ liệu minh họa."
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              106.85,
+              20.85
+            ],
+            [
+              107.15,
+              20.85
+            ],
+            [
+              107.15,
+              21.12
+            ],
+            [
+              106.85,
+              21.12
+            ],
+            [
+              106.85,
+              20.85
+            ]
+          ]
+        ]
+      }
+    }
+  ]
+}
