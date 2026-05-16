@@ -3,150 +3,152 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Bản đồ cây dược liệu và cây trồng chủ lực tỉnh Quảng Ninh</title>
-
-  <link rel="stylesheet" href="assets/css/style.css" />
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <title>Atlas số tài nguyên khí hậu – đất – cây trồng tỉnh Quảng Ninh</title>
+  <meta name="description" content="Atlas số/WebGIS tài nguyên khí hậu, đất và cây trồng dược liệu, chủ lực tỉnh Quảng Ninh." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIINfQbG7kijpuu9FLLJ4DkDkU8bO8gF4Q=" crossorigin=""/>
+  <link rel="stylesheet" href="assets/styles.css" />
 </head>
 <body>
-  <header class="site-header">
-    <div class="container header-inner">
-      <div>
-        <h1>Bản đồ cây dược liệu và cây trồng chủ lực tỉnh Quảng Ninh</h1>
-        <p class="subtitle">Trang thông tin bản đồ phục vụ đề tài nghiên cứu phân vùng phát triển cây dược liệu và cây trồng chủ lực.</p>
+  <header class="hero">
+    <nav class="topbar">
+      <div class="brand">
+        <div class="brand-icon">QN</div>
+        <div>
+          <div class="eyebrow">Quảng Ninh Digital Atlas</div>
+          <h1>Atlas số tài nguyên khí hậu – đất – cây trồng</h1>
+        </div>
       </div>
-      <nav>
-        <a href="#home">Giới thiệu</a>
-        <a href="#maps">Bản đồ</a>
-        <a href="#download">Tải dữ liệu</a>
-        <a href="#contact">Thông tin</a>
-      </nav>
-    </div>
+      <div class="mode-switch">
+        <button class="mode-btn active" data-mode="guest">Guest</button>
+        <button class="mode-btn" data-mode="admin">Admin</button>
+      </div>
+    </nav>
+
+    <section class="hero-grid">
+      <div class="hero-copy">
+        <div class="tags">
+          <span>WebGIS</span><span>LUSET</span><span>S1–S2–S3–N</span><span>Quảng Ninh</span>
+        </div>
+        <h2>Tra cứu bản đồ phân vùng phát triển cây dược liệu và cây trồng chủ lực tỉnh Quảng Ninh</h2>
+        <p>Cổng thông tin bản đồ số phục vụ quản lý, quy hoạch, nghiên cứu và hỗ trợ ra quyết định phát triển cây trồng dựa trên tài nguyên khí hậu và tài nguyên đất.</p>
+        <div class="hero-actions">
+          <a href="#webgis" class="primary-btn">Khám phá bản đồ</a>
+          <a href="#catalog" class="ghost-btn">Danh mục cây trồng</a>
+        </div>
+      </div>
+      <div class="hero-card">
+        <div id="heroMap" class="mini-map"></div>
+        <div class="legend-card">
+          <strong>Chú giải mức phù hợp</strong>
+          <div class="legend-grid">
+            <span><i class="s1"></i>S1 Rất phù hợp</span>
+            <span><i class="s2"></i>S2 Phù hợp</span>
+            <span><i class="s3"></i>S3 Ít phù hợp</span>
+            <span><i class="n"></i>N Không phù hợp</span>
+          </div>
+        </div>
+      </div>
+    </section>
   </header>
 
   <main>
-    <section id="home" class="hero container">
-      <div class="hero-text">
-        <h2>Hệ thống bản đồ trực tuyến</h2>
-        <p>
-          Website này được xây dựng nhằm công bố, tra cứu và chia sẻ các lớp bản đồ liên quan đến điều kiện khí hậu,
-          đất đai, mức độ phù hợp và định hướng phát triển một số cây dược liệu, cây trồng chủ lực trên địa bàn tỉnh Quảng Ninh.
-        </p>
-        <p>
-          Thầy có thể thay nội dung mô tả, hình ảnh bản đồ và dữ liệu GeoJSON trong thư mục <strong>data</strong>.
-        </p>
-      </div>
-      <div class="hero-card">
-        <h3>Các nhóm bản đồ chính</h3>
-        <ul>
-          <li>Bản đồ phân vùng cây Ba kích</li>
-          <li>Bản đồ phân vùng cây Trà hoa vàng</li>
-          <li>Bản đồ vùng thích hợp di thực cây Sâm Ngọc Linh</li>
-          <li>Bản đồ khí hậu, đất và mức độ phù hợp tổng hợp</li>
-        </ul>
-      </div>
+    <section class="stats">
+      <div><b>08</b><span>Cây dược liệu</span></div>
+      <div><b>07</b><span>Cây chủ lực/lâm nghiệp</span></div>
+      <div><b>60</b><span>Bản đồ chuyên đề</span></div>
+      <div><b>1:50.000</b><span>Tỷ lệ bản đồ</span></div>
     </section>
 
-    <section id="maps" class="container section">
-      <div class="section-title">
-        <h2>Tra cứu bản đồ</h2>
-        <p>Chọn lớp bản đồ cần hiển thị. Dữ liệu minh họa có thể được thay bằng dữ liệu chính thức của đề tài.</p>
-      </div>
-
-      <div class="map-layout">
-        <aside class="layer-panel">
-          <h3>Danh mục bản đồ</h3>
-
-          <label class="layer-item">
-            <input type="radio" name="mapLayer" value="bakich" checked />
-            <span>Ba kích</span>
-          </label>
-
-          <label class="layer-item">
-            <input type="radio" name="mapLayer" value="trahoavang" />
-            <span>Trà hoa vàng</span>
-          </label>
-
-          <label class="layer-item">
-            <input type="radio" name="mapLayer" value="samngoclinh" />
-            <span>Sâm Ngọc Linh di thực</span>
-          </label>
-
-          <label class="layer-item">
-            <input type="radio" name="mapLayer" value="tonghop" />
-            <span>Tổng hợp khí hậu - đất</span>
-          </label>
-
-          <div class="legend">
-            <h4>Chú giải</h4>
-            <div><span class="legend-box high"></span> Rất phù hợp</div>
-            <div><span class="legend-box medium"></span> Phù hợp</div>
-            <div><span class="legend-box low"></span> Ít phù hợp</div>
-            <div><span class="legend-box none"></span> Không phù hợp / hạn chế</div>
+    <section class="layout" id="webgis">
+      <aside class="sidebar">
+        <div class="panel">
+          <h3>Tra cứu cây trồng</h3>
+          <input id="searchInput" type="search" placeholder="Tìm cây, tên khoa học, vùng..." />
+          <div class="filters">
+            <button class="filter active" data-group="all">Tất cả</button>
+            <button class="filter" data-group="Dược liệu">Dược liệu</button>
+            <button class="filter" data-group="Lâm nghiệp chủ lực">Lâm nghiệp chủ lực</button>
           </div>
+        </div>
 
-          <div class="note">
-            <strong>Gợi ý:</strong> Có thể đưa dữ liệu dạng GeoJSON vào thư mục <code>data/geojson</code>
-            và cập nhật đường dẫn trong file <code>assets/js/map.js</code>.
+        <div class="panel">
+          <h3>Nhóm lớp bản đồ</h3>
+          <button class="layer active" data-layer="KH_DAT">Tổng hợp khí hậu – đất</button>
+          <button class="layer" data-layer="NHIET">Điều kiện nhiệt</button>
+          <button class="layer" data-layer="AM">Điều kiện ẩm</button>
+          <button class="layer" data-layer="DAT">Điều kiện đất</button>
+        </div>
+
+        <div class="panel dark">
+          <h3>Chuẩn dữ liệu</h3>
+          <p>Hệ thống quản lý các lớp theo cấu trúc: <b>NHIET</b>, <b>AM</b>, <b>DAT</b>, <b>KH_DAT</b>; phân cấp <b>S1–S2–S3–N</b>; có thể gắn MPK, GeoJSON, PDF, JPG và metadata.</p>
+        </div>
+      </aside>
+
+      <section class="map-area">
+        <div class="map-header">
+          <div>
+            <span id="cropGroup" class="badge">Dược liệu</span>
+            <h2 id="cropName">Ba kích</h2>
+            <p id="cropLatin">Morinda officinalis</p>
           </div>
-        </aside>
-
-        <div id="map"></div>
-      </div>
+          <div class="map-tools">
+            <button id="downloadBtn">Tải bản đồ/PDF</button>
+            <button id="metadataBtn">Metadata</button>
+          </div>
+        </div>
+        <div class="map-and-info">
+          <div id="mainMap"></div>
+          <div class="info-card">
+            <h3>Nhận xét khoa học</h3>
+            <p id="cropHighlight"></p>
+            <h3>Vùng ưu tiên</h3>
+            <p id="cropRegion"></p>
+            <h3>Lớp đang xem</h3>
+            <p id="activeLayerText">Tổng hợp khí hậu – đất</p>
+            <div class="legend-grid full">
+              <span><i class="s1"></i>S1 Rất phù hợp</span>
+              <span><i class="s2"></i>S2 Phù hợp</span>
+              <span><i class="s3"></i>S3 Ít phù hợp</span>
+              <span><i class="n"></i>N Không phù hợp</span>
+            </div>
+          </div>
+        </div>
+      </section>
     </section>
 
-    <section class="container section cards-section">
+    <section class="catalog" id="catalog">
       <div class="section-title">
-        <h2>Thông tin theo từng cây</h2>
+        <span>Danh mục Atlas</span>
+        <h2>Cây dược liệu và cây trồng chủ lực</h2>
       </div>
-
-      <div class="cards">
-        <article class="card">
-          <h3>Ba kích</h3>
-          <p>Cập nhật mô tả về yêu cầu sinh thái, điều kiện khí hậu - đất, mức độ phù hợp và khu vực khuyến nghị phát triển.</p>
-          <a href="pages/ba-kich.html">Xem chi tiết</a>
-        </article>
-
-        <article class="card">
-          <h3>Trà hoa vàng</h3>
-          <p>Cập nhật mô tả vùng phân bố, điều kiện lập địa, khí hậu và khả năng phát triển tại tỉnh Quảng Ninh.</p>
-          <a href="pages/tra-hoa-vang.html">Xem chi tiết</a>
-        </article>
-
-        <article class="card">
-          <h3>Sâm Ngọc Linh di thực</h3>
-          <p>Cập nhật kết quả đánh giá khả năng di thực, điều kiện khí hậu - đất và vùng thử nghiệm phù hợp.</p>
-          <a href="pages/sam-ngoc-linh.html">Xem chi tiết</a>
-        </article>
-      </div>
+      <div id="cropGrid" class="crop-grid"></div>
     </section>
 
-    <section id="download" class="container section download-box">
-      <h2>Tải dữ liệu và tài liệu</h2>
-      <p>Thầy có thể đưa báo cáo PDF, bản đồ ảnh hoặc dữ liệu vào thư mục <strong>docs</strong> và cập nhật liên kết tại đây.</p>
-      <ul>
-        <li><a href="docs/README.txt">Hướng dẫn cập nhật dữ liệu</a></li>
-      </ul>
-    </section>
-
-    <section id="contact" class="container section contact-box">
-      <h2>Thông tin thực hiện</h2>
-      <p>
-        Cơ quan chủ trì/nhóm thực hiện: cập nhật theo thông tin chính thức của đề tài.
-      </p>
-      <p>
-        Trích dẫn đề xuất: “Bản đồ phân vùng cây dược liệu và cây trồng chủ lực tỉnh Quảng Ninh”.
-      </p>
+    <section id="adminPanel" class="admin hidden">
+      <div class="section-title light">
+        <span>Admin Portal</span>
+        <h2>Quản trị dữ liệu Atlas số</h2>
+      </div>
+      <div class="admin-grid">
+        <div><b>Upload bản đồ</b><span>MPK, GeoJSON, JPG, PDF</span></div>
+        <div><b>Quản lý metadata</b><span>Nguồn dữ liệu, năm, hệ tọa độ, phương pháp</span></div>
+        <div><b>Xuất bản layer</b><span>Bật/tắt, phân quyền, cập nhật lớp</span></div>
+        <div><b>Dashboard</b><span>Thống kê diện tích S1/S2/S3/N theo cây</span></div>
+      </div>
     </section>
   </main>
 
   <footer>
-    <div class="container">
-      <p>© 2026. Trang bản đồ phục vụ nghiên cứu khoa học. Xây dựng bằng GitHub Pages và Leaflet.</p>
-    </div>
+    <strong>Atlas số tài nguyên khí hậu – đất – cây trồng tỉnh Quảng Ninh</strong>
+    <p>Sản phẩm phục vụ nghiên cứu, quy hoạch, quản lý tài nguyên và phát triển bền vững cây dược liệu, cây lâm nghiệp chủ lực.</p>
   </footer>
 
-  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-  <script src="assets/js/map.js"></script>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <script src="assets/data.js"></script>
+  <script src="assets/app.js"></script>
 </body>
 </html>
